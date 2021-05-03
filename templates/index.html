@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Covid Resources</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <link href="static/styles/main.css" rel="stylesheet" />
+    <style>
+      a:link, a:visited 
+      {
+      color: white;
+      }
+    </style>
+  </head>
+  <body>
+  <h1 align="center" data-localize="head">
+    COVID RESOURCE PAGE
+  </h1>
+    <div class="s008">
+      <form  method="POST" action="/resource/">
+      <!--<input type="SUBMIT"/>-->
+        <div class="inner-form">
+          <div class="advance-search">
+            <span class="desc" data-localize="title">Covid Help</span>
+            <div class="row">
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="LANGUAGES" value="">Select language</option> 
+                    <!-- Look into it -->
+                    <option>english</option>
+                    <option>हिंदी</option>
+                    <option>తెలుగు</option>
+                  </select>
+                </div>
+              </div>
+              <script src="static/js/extention/choices.js"></script>
+
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="n2" data-localize="title2" >
+                    <option placeholder="" value="" >Resources required</option>
+                    <option data-localize="resources.remdesivir">Remdesivir</option>
+                    <option>Hospital beds</option>
+                    <option>Oxygen cylinders</option>
+                    <option>Plasma</option>
+                    <option>Fabiflu & Favipiravir</option>
+                    <option>ICU & ventilators</option>
+                  </select>
+                </div>
+              </div>
+
+              <form method="post">
+                <div class="input-field">
+                  <div class="input-select" data-localize="city" id="city">
+                    City
+                  </div>
+                  <input type="text" name="n1" id="n1"/>
+                </div>
+              </form>
+            </div>
+            <div class="row third">
+              <div class="input-field">
+                <div class="result-count" data-localize="wear">
+                <span>Wear</span>Masks</div>
+                <div class="group-btn" >
+
+                      <button type="submit" class="btn-search" data-localize="search">
+                        Search
+                      </button>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="/static/js/extention/choices.js"></script>
+    <script>
+      const customSelects = document.querySelectorAll("select");
+      const deleteBtn = document.getElementById('delete')
+      const choices = new Choices('select',
+      {
+        searchEnabled: false,
+        removeItemButton: true,
+        itemSelectText: '',
+      });
+      for (let i = 0; i < customSelects.length; i++)
+      {
+        customSelects[i].addEventListener('addItem', function(event)
+        {
+          if (event.detail.value)
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('valid')
+            parent.classList.remove('invalid')
+          }
+          else
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('invalid')
+            parent.classList.remove('valid')
+          }
+        }, false);
+      }
+      deleteBtn.addEventListener("click", function(e)
+      {
+        /* e.preventDefault()
+         const deleteAll = document.querySelectorAll('.choices__button')
+        for (let i = 0; i < deleteAll.length; i++)
+        {
+          deleteAll[i].click();
+        } */
+        const deleteAll = form.querySelector('input[name="n1"]');
+      });
+    </script>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jquery.localize.js"></script>
+    <script>
+      $('[data-localize]').localize("mylanguage",{language:"en"});
+    </script>
+
+  </body>
+</html>
