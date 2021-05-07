@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import tweepy
 import time
-import pandas as pd
+#import pandas as pd
 
 load_dotenv()
 consumer_key = os.getenv('consumer_key')

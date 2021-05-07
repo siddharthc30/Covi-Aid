@@ -812,7 +812,7 @@ legend {
 }
 
 .s008 {
-  min-height: 83.3vh;
+  min-height: 63.9vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -1127,4 +1127,31 @@ legend {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  background-color: #76b1d8;
+  color: black;
+}
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
